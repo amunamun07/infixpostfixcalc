@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorPrimary"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CalculatorActivity">
+
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorAccent"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/Logo"
+            android:layout_width="280dp"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:padding="15dp"
+            android:text="Infix-Postfix-Calculator"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/EqualsBtn"
+            android:src="@drawable/ic_drag_handle_black_24dp"
+            android:background="@drawable/keys"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_width="60dp"
+            android:layout_height="50dp" />
+
+    </RelativeLayout>
+
+
+    <EditText
+        android:textSize="30dp"
+        android:textColor="#000"
+        android:gravity="center"
+        android:id="@+id/Input"
+        android:layout_below="@id/title"
+        android:background="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="80dp" />
+    <TextView
+        android:textSize="35dp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:gravity="end"
+        android:id="@+id/Display"
+        android:layout_below="@id/Input"
+        android:background="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="70dp" />
+
+   <android.support.v7.widget.RecyclerView
+       android:numColumns="4"
+       android:id="@+id/Keys"
+       android:layout_below="@id/Display"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"/>
+
+
+</RelativeLayout>

@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">InfixPostfixCalculator</string>
+
+    <string-array name="Keys">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>+</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>-</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>/</item>
+        <item>(</item>
+        <item>0</item>
+        <item>)</item>
+        <item>*</item>
+    </string-array>
+</resources>
