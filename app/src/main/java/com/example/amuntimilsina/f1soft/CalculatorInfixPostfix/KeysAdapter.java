@@ -83,7 +83,7 @@ public class KeysAdapter extends RecyclerView.Adapter<KeysAdapter.ViewHolder> {
                            Input.setText(dx);
                        }
                 }else if(data.get(position).equals("=")){
-
+                    ((MainActivity)context).EqualWork();
                 }else {
                        Input.append(data.get(position));
                 }

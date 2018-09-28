@@ -98,4 +98,34 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    public void EqualWork(){
+            PostFixExp.clear();
+            ConvertToPostfix c = new ConvertToPostfix();
+            c.ClearVStach();
+            c.Vstackinit();
+            String InfixExpression = Input.getText().toString().trim();
+
+            List<String> PostFixExpression = c.PostfixExpression(InfixExpression);
+
+            if(PostFixExpression.get(0).equals("Syntax Error")){
+                String FinalOutPut = PostFixExpression.get(0);
+                Display.setText(FinalOutPut);
+
+            }else{
+                int j = 0;
+                for (int i=0;i<PostFixExpression.size() && j<PostFixExpression.size();i++){
+                    if(PostFixExpression.get(i) != "invalid"){
+                        PostFixExp.add(j,PostFixExpression.get(i));
+                        j++;
+                    }
+                }
+
+                PostfixEvaluation p = new PostfixEvaluation();
+                String FinalOutPut = p.Evaluate(PostFixExp);
+                Display.setText(FinalOutPut);
+            }
+
+    }
 }
+
