@@ -2,16 +2,16 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/colorPrimary"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InfixToPostfix.CalculatorActivity">
+    android:background="@mipmap/pexels_photo_1020315"
+    tools:context=".CalculatorInfixPostfix.MainActivity">
 
     <RelativeLayout
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@color/colorAccent"
+        android:background="@mipmap/clouds_in_sky_background_192377"
         android:gravity="center">
 
         <TextView
@@ -22,6 +22,7 @@
             android:padding="15dp"
             android:text="Infix-Postfix-Calculator"
             android:textSize="20dp"
+            android:textColor="#fff"
             android:textStyle="bold" />
 
         <ImageButton
@@ -56,12 +57,21 @@
         android:layout_width="match_parent"
         android:layout_height="70dp" />
 
-   <android.support.v7.widget.RecyclerView
-       android:numColumns="4"
-       android:id="@+id/Keys"
-       android:layout_below="@id/Display"
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/Display"
+        android:layout_marginTop="37dp"
+        android:gravity="center">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/Keys"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numColumns="4" />
+
+    </RelativeLayout>
+
 
 
 </RelativeLayout>
