@@ -8,10 +8,12 @@ import android.support.v7.widget.PagerSnapHelper;
 import android.support.v7.widget.RecyclerView;
 import android.text.InputType;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
 
 import com.example.amuntimilsina.f1soft.R;
 
@@ -41,10 +43,12 @@ public class MainActivity extends AppCompatActivity {
         String[] keyitem = getResources().getStringArray(R.array.Keys);
         data.addAll(Arrays.asList(keyitem));
 
-        Input.setInputType(InputType.TYPE_NULL);
+                Input.setActivated(true);
+                Input.setPressed(true);
+                Input.setInputType(InputType.TYPE_NULL);
 
         recycleView.setLayoutManager(new GridLayoutManager(MainActivity.this,4));
-        KeysAdapter adaptor = new KeysAdapter(data,MainActivity.this,Input);
+        KeysAdapter adaptor = new KeysAdapter(data,MainActivity.this,Input,Display);
         recycleView.setAdapter(adaptor);
 
 

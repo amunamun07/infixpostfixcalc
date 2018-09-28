@@ -18,5 +18,7 @@
         <item>0</item>
         <item>)</item>
         <item>*</item>
+        <item>DEL</item>
+        <item>=</item>
     </string-array>
 </resources>

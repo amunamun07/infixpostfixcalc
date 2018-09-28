@@ -1,8 +1,11 @@
 package com.example.amuntimilsina.f1soft.CalculatorInfixPostfix;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,12 +22,15 @@ public class KeysAdapter extends RecyclerView.Adapter<KeysAdapter.ViewHolder> {
     ArrayList<String> data;
     Context context;
     EditText Input;
+    TextView Display;
 
 
-    public KeysAdapter(ArrayList<String> data, Context context, EditText Input) {
+    public KeysAdapter(ArrayList<String> data, Context context, EditText Input, TextView Display) {
         this.data = data;
         this.context = context;
         this.Input = Input;
+        this.Display = Display;
+
     }
 
 
@@ -60,16 +66,31 @@ public class KeysAdapter extends RecyclerView.Adapter<KeysAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
         holder.myTextView.setText(data.get(position));
 
         holder.Key_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                    Input.append(data.get(position));
 
+                if(data.get(position).equals("DEL")){
+                       if(Input.length() == 0  && data.get(position).equals("DEL")) {
+                           Display.setText("");
+                       }else {
+                           String x = Input.getText().toString();
+                           System.out.println("lol:" + x);
+                           String dx = x.substring(0,x.length() - 1);
+                           Input.setText(dx);
+                       }
+                }else if(data.get(position).equals("=")){
+
+                }else {
+                       Input.append(data.get(position));
+                }
             }
         });
+
+
     }
 
     @Override
